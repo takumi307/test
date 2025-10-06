@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>放置RPG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>放置RPG</h1>
+        <div id="status-container">
+            <p>ゴールド: <span id="gold">0</span></p>
+            <p>攻撃力: <span id="attack-power">1</span></p>
+        </div>
+        <div id="battle-container">
+            <div id="player-area">
+                <h2>スライム</h2>
+                <div id="player"></div>
+            </div>
+            <div id="enemy-area">
+                <h2>敵</h2>
+                <div id="enemy">
+                    <p>HP: <span id="enemy-hp">10</span></p>
+                </div>
+            </div>
+        </div>
+        <div id="controls-container">
+            <button id="upgrade-attack">攻撃力強化 (コスト: <span id="upgrade-cost">10</span>)</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
