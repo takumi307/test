@@ -32,13 +32,55 @@ body {
     align-items: center;
 }
 
+@keyframes player-attack-animation {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
 #player {
     background-color: #4CAF50; /* Green */
     border-radius: 50%;
 }
 
+.player-attack {
+    animation: player-attack-animation 0.2s ease-in-out;
+}
+
+@keyframes damage-popup-animation {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+}
+
+.damage-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: red;
+    font-size: 1.5em;
+    font-weight: bold;
+    pointer-events: none; /* Make it unclickable */
+    animation: damage-popup-animation 1s forwards;
+}
+
 #enemy {
     background-color: #f44336; /* Red */
+    transition: all 0.3s ease;
+    position: relative; /* For positioning damage popups */
+}
+
+#enemy.boss {
+    background-color: #6a0dad; /* Purple */
+    transform: scale(1.2);
+    border-width: 4px;
+    border-color: #333;
 }
 
 #enemy p {
