@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!-- Status Container -->
+    <LinearLayout
+        android:id="@+id/statusContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/stageTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="ステージ: 1-1" />
+
+        <TextView
+            android:id="@+id/goldTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            tools:text="ゴールド: 0" />
+
+        <TextView
+            android:id="@+id/attackPowerTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            tools:text="攻撃力: 1" />
+    </LinearLayout>
+
+    <!-- Battle Container -->
+    <View
+        android:id="@+id/playerView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#4CAF50"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/enemyView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="スライム"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/playerView"
+        app:layout_constraintStart_toStartOf="@id/playerView"
+        app:layout_constraintEnd_toEndOf="@id/playerView"
+        android:layout_marginTop="8dp"/>
+
+    <FrameLayout
+        android:id="@+id/enemyView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#f44336"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/playerView"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/enemyHpTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            tools:text="HP: 10" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/enemyLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="敵"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/enemyView"
+        app:layout_constraintStart_toStartOf="@id/enemyView"
+        app:layout_constraintEnd_toEndOf="@id/enemyView"
+        android:layout_marginTop="8dp"/>
+
+
+    <!-- Controls Container -->
+    <Button
+        android:id="@+id/upgradeAttackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="攻撃力強化 (コスト: 10)"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="32dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
